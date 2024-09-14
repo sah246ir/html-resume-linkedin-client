@@ -29,7 +29,8 @@ const HomeSection = () => {
       if(!response.success){
         setFile(null)
         setMessage('Please retry by uploading the file again or re-add your API key')
-        return
+        setLoading(false)
+      return
       }
       setFile(null)
       setMessage('Your resume has been successfully converted into an attractive html template!');
