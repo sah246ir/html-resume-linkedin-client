@@ -1,13 +1,10 @@
 // Define types for the response and possible errors
 interface ApiResponse {
   success: boolean;
-  message: string;
-  data?: any;  // You can define a more specific type if you know the structure
 }
 
 interface ApiError {
   success: boolean;
-  error: string;
 }
 
 // Function to upload resume file with API key
@@ -16,7 +13,7 @@ export const uploadResume = async (file: File, apiKey: string): Promise<ApiRespo
 
   // Ensure that both file and API key are provided
   if (!file || !apiKey) {
-    return { success: false, error: 'File and API key are required.' };
+    return { success: false};
   }
 
   // Create FormData to send the file and API key
@@ -33,8 +30,7 @@ export const uploadResume = async (file: File, apiKey: string): Promise<ApiRespo
 
     // Check if the response is successful
     if (!response.ok) {
-      const errorMessage = `Failed to process resume: ${response.statusText}`;
-      return { success: false, error: errorMessage };
+      return { success: false };
     }
 
     // Parse the JSON response
@@ -47,15 +43,14 @@ export const uploadResume = async (file: File, apiKey: string): Promise<ApiRespo
 
     link.click();
 
-// Clean up
-window.URL.revokeObjectURL(link.href);
+    // Clean up
+    window.URL.revokeObjectURL(link.href);
     // Ensure the response has a success flag
     return {
-      success: true,
-      message: 'Resume processed successfully!',
+      success: true
     };
   } catch (error) {
     // Catch and return any error that occurs during the request
-    return { success: false, error: `An error occurred: ${(error as Error).message}` };
+    return { success: false};
   }
 };
