@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { OpenAiContext } from "./context";
 import ApiKeyDialog from "./components/dialog/ApiKeyDialog";
 import HomeSection from "./components/section/HomeSection";

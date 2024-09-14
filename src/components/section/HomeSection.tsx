@@ -25,7 +25,7 @@ const HomeSection = () => {
     } else {
         setLoading(true)
       setMessage('Processing resume...'); 
-      const request = await uploadResume(file,openai.key || "")
+      await uploadResume(file,openai.key || "")
       setFile(null)
       setMessage('Your resume has been successfully converted into an attractive html template!');
       setLoading(false)
