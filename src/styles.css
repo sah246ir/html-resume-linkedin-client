@@ -1,0 +1,10 @@
+/* src/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body{
+    background: rgb(55 65 81);
+    display: grid;
+    place-items: center;
+}
