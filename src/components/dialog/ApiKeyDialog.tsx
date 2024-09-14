@@ -19,7 +19,7 @@ const ApiKeyDialog = () => {
         <form onSubmit={onSubmit} className="mt-[5em] w-full">
           <p tabIndex={0} className='!text-left w-full mb-2' >Open AI Key</p> 
           <div className="flex items-center  bg-white bg-opacity-10 ">
-            <img width={65} className='py-3 px-4' src={logo} alt="open ai logo image" />
+            <img width={65} className='py-3 px-4' src={logo} alt="open ai logo" />
             <div className="flex flex-col gap-1 w-full">
             <input
                   value={key}
