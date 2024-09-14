@@ -7,10 +7,10 @@ interface ApiError {
   success: boolean;
 }
 
-const host = process.env.REACT_APP_API_HOST || "localhost:8000"
+const host = process.env.REACT_APP_API_HOST || "http://localhost:8000"
 // Function to upload resume file with API key
 export const uploadResume = async (file: File, apiKey: string): Promise<ApiResponse | ApiError> => {
-  const url = `http://${host}/process-resume`;
+  const url = `${host}/process-resume`;
 
   // Ensure that both file and API key are provided
   if (!file || !apiKey) {
