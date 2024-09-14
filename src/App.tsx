@@ -14,7 +14,7 @@ function App() {
     <OpenAiContext.Provider value={{ key: ApiKey, setKey: (key: string) => { SetApiKey(key.trim()) } }}>
       <>
         <main>
-          <button onClick={()=>{localStorage.removeItem("key")}} className=" absolute right-5 top-5 flex items-center gap-2">
+          <button onClick={()=>{SetApiKey("")}} className=" absolute right-5 top-5 flex items-center gap-2">
             <Trash2 className="text-red-600"/>
             <span className="text-red-500">
               Delete Key
